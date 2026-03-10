@@ -1,0 +1,323 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Jessica Kuo — Data & ML Engineer">
+
+  <!-- ── Sidebar ── -->
+  <aside class="sidebar">
+
+    <div class="sidebar-photo-wrap">
+      <div class="sidebar-photo" id="sidebar-photo">
+        <!--
+          TO ADD YOUR PHOTO:
+          1. Place your image file in /public/photo.jpg
+          2. Replace the emoji below with:
+             <img src="/photo.jpg" alt="Jessica Kuo" />
+        -->
+        🧑‍💻
+      </div>
+      <div class="sidebar-avail" title="Available for new roles"></div>
+    </div>
+
+    <div class="sidebar-name">Jessica Kuo</div>
+    <div class="sidebar-role">Data & ML Engineer</div>
+
+    <div class="sidebar-divider"></div>
+
+    <ul class="sidebar-nav">
+      <li><a href="#about" class="active">
+        <span class="sidebar-nav-icon">🌿</span> About
+      </a></li>
+      <li><a href="#skills">
+        <span class="sidebar-nav-icon">⚙️</span> Skills
+      </a></li>
+      <li><a href="#projects">
+        <span class="sidebar-nav-icon">🔬</span> Projects
+      </a></li>
+      <li><a href="#contact">
+        <span class="sidebar-nav-icon">✉️</span> Contact
+      </a></li>
+    </ul>
+
+    <div class="sidebar-links">
+      <a href="https://github.com/kuo4230" target="_blank" class="sidebar-link">
+        <span class="sidebar-link-icon">⌥</span> github.com/kuo4230
+      </a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank" class="sidebar-link">
+        <span class="sidebar-link-icon">◈</span> linkedin.com/in/yourusername
+      </a>
+      <a href="mailto:kuo.wanyi.jessica@gmail.com" class="sidebar-link">
+        <span class="sidebar-link-icon">✉</span> kuo.wanyi.jessica@gmail.com
+      </a>
+    </div>
+
+  </aside>
+
+  <!-- ── Main ── -->
+  <div class="main">
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero-available">
+        <span class="hero-available-dot"></span>
+        Available for new roles
+      </div>
+      <h1>
+        Data &amp; <em>Machine<br/>Learning</em> Engineer
+      </h1>
+      <p class="hero-sub">
+        Building scalable, reliable data and ML systems — end-to-end,
+        from ingestion to production. Focused on healthcare IT and
+        research applications where correctness matters.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#contact" class="btn-ghost">Get in Touch</a>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="section-eyebrow">About</div>
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 class="section-title">End-to-end ML,<br/><em>built to last.</em></h2>
+          <p>
+            I'm a Data &amp; Machine Learning Engineer with a focus on building
+            systems that are correct, maintainable, and production-ready. My work
+            spans the full ML lifecycle — data ingestion and modeling, training
+            pipelines, deployment, and analytics.
+          </p>
+          <p>
+            I've designed end-to-end ML pipelines including computer vision systems
+            and multi-modal data platforms, supporting both rapid experimentation and
+            large-scale production workloads. I care deeply about reproducibility,
+            observability, and shipping things that actually work.
+          </p>
+          <p>
+            I'm especially drawn to problems at the intersection of large-scale data
+            systems and healthcare IT — where correctness and reliability have
+            real-world impact.
+          </p>
+        </div>
+        <div class="about-cards">
+          <div class="about-card">
+            <div class="about-card-icon">🐍</div>
+            <div>
+              <div class="about-card-title">Languages</div>
+              <div class="about-card-desc">Python · SQL</div>
+            </div>
+          </div>
+          <div class="about-card">
+            <div class="about-card-icon">🗄️</div>
+            <div>
+              <div class="about-card-title">Data Stack</div>
+              <div class="about-card-desc">Snowflake · dbt · Fivetran</div>
+            </div>
+          </div>
+          <div class="about-card">
+            <div class="about-card-icon">📦</div>
+            <div>
+              <div class="about-card-title">Infrastructure</div>
+              <div class="about-card-desc">Docker · CI/CD · Cloud</div>
+            </div>
+          </div>
+          <div class="about-card">
+            <div class="about-card-icon">🔬</div>
+            <div>
+              <div class="about-card-title">ML Focus</div>
+              <div class="about-card-desc">Computer Vision · Multi-modal · Healthcare AI</div>
+            </div>
+          </div>
+          <div class="about-card">
+            <div class="about-card-icon">🏥</div>
+            <div>
+              <div class="about-card-title">Domain Interest</div>
+              <div class="about-card-desc">Healthcare IT · Research · Clinical Data</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section section-alt" id="skills">
+      <div class="section-eyebrow">Skills</div>
+      <h2 class="section-title">The full stack,<br/><em>top to bottom.</em></h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-group-title">Data Engineering</div>
+          <ul>
+            <li>Data Ingestion &amp; Pipelines</li>
+            <li>Data Modeling (dbt)</li>
+            <li>Snowflake / Data Warehousing</li>
+            <li>Fivetran / ELT Orchestration</li>
+            <li>SQL Optimization</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Machine Learning</div>
+          <ul>
+            <li>End-to-End ML Pipelines</li>
+            <li>Computer Vision Systems</li>
+            <li>Multi-modal Data Platforms</li>
+            <li>Model Training &amp; Evaluation</li>
+            <li>Experiment Tracking</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">MLOps &amp; Deployment</div>
+          <ul>
+            <li>Model Deployment &amp; Serving</li>
+            <li>Containerization (Docker)</li>
+            <li>CI/CD Pipelines</li>
+            <li>Reproducible Systems</li>
+            <li>Production Monitoring</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Analytics</div>
+          <ul>
+            <li>Analytics Engineering</li>
+            <li>Data Quality &amp; Testing</li>
+            <li>Metrics Design</li>
+            <li>Python (pandas, numpy)</li>
+            <li>Visualization</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="section-eyebrow">Projects</div>
+      <h2 class="section-title">Selected <em>work.</em></h2>
+      <div class="projects-list">
+
+        <article class="project-card">
+          <div>
+            <div class="project-type">Computer Vision · Production ML</div>
+            <h3>End-to-End CV Pipeline</h3>
+            <p>
+              Designed and deployed a production-grade computer vision system covering
+              data ingestion, model training, evaluation, and real-time serving.
+              Built for reliability and observability at scale.
+            </p>
+            <div class="project-tags">
+              <span>Python</span><span>Docker</span><span>CI/CD</span>
+              <span>Computer Vision</span><span>MLOps</span>
+            </div>
+          </div>
+          <div class="project-arrow">↗</div>
+        </article>
+
+        <article class="project-card">
+          <div>
+            <div class="project-type">Data Platform · Healthcare IT</div>
+            <h3>Multi-modal Data Platform</h3>
+            <p>
+              Built a unified platform for ingesting, processing, and serving
+              multi-modal data to support both ML experimentation and production
+              analytics workloads across clinical and operational data streams.
+            </p>
+            <div class="project-tags">
+              <span>Snowflake</span><span>dbt</span><span>Fivetran</span>
+              <span>Python</span><span>Multi-modal</span>
+            </div>
+          </div>
+          <div class="project-arrow">↗</div>
+        </article>
+
+        <article class="project-card">
+          <div>
+            <div class="project-type">Analytics Engineering</div>
+            <h3>Scalable dbt Modeling Layer</h3>
+            <p>
+              Designed and implemented a dbt modeling layer for a large-scale
+              warehouse, establishing testing frameworks, documentation standards,
+              and CI-enforced data quality gates.
+            </p>
+            <div class="project-tags">
+              <span>dbt</span><span>SQL</span><span>Snowflake</span>
+              <span>CI/CD</span><span>Data Quality</span>
+            </div>
+          </div>
+          <div class="project-arrow">↗</div>
+        </article>
+
+      </div>
+      <p style="margin-top:1.5rem; font-family:var(--font-mono); font-size:0.65rem; color:var(--text-light); letter-spacing:0.05em;">
+        ✦ Full details and repos available on request — some work is under NDA.
+      </p>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section-alt" id="contact">
+      <div class="section-eyebrow">Contact</div>
+      <div class="contact-grid">
+        <div class="contact-text">
+          <h2 class="section-title">Let's build<br/><em>something great.</em></h2>
+          <p>
+            I'm open to roles centred on large-scale data systems and production ML —
+            particularly in healthcare IT and research where the work has meaningful
+            real-world impact.
+          </p>
+          <p>
+            Whether you have a role, a project, or just want to chat about data
+            systems — I'd love to hear from you.
+          </p>
+        </div>
+        <div class="contact-links-stack">
+          <a href="mailto:kuo.wanyi.jessica@gmail.com" class="contact-link-card">
+            <div class="contact-link-icon">✉️</div>
+            <div>
+              <div class="contact-link-label">Email</div>
+              <div class="contact-link-value">kuo.wanyi.jessica@gmail.com</div>
+            </div>
+          </a>
+          <a href="https://github.com/kuo4230" target="_blank" class="contact-link-card">
+            <div class="contact-link-icon">⌥</div>
+            <div>
+              <div class="contact-link-label">GitHub</div>
+              <div class="contact-link-value">github.com/kuo4230</div>
+            </div>
+          </a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" class="contact-link-card">
+            <div class="contact-link-icon">◈</div>
+            <div>
+              <div class="contact-link-label">LinkedIn</div>
+              <div class="contact-link-value">linkedin.com/in/yourusername</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span>Built with Astro · Hosted on GitHub Pages</span>
+      <span>🌿 Jessica Kuo © 2025</span>
+    </footer>
+
+  </div><!-- /main -->
+
+</Layout>
+
+<script>
+  // Highlight active nav item on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.sidebar-nav a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.sidebar-nav a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sections.forEach(s => observer.observe(s));
+</script>
