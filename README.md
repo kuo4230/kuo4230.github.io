@@ -1,4 +1,4 @@
-# Portfoli
+# Portfolio
 
 Built with [Astro](https://astro.build), hosted on GitHub Pages.
 
