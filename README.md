@@ -1,6 +1,6 @@
-# Portfolio — Portrait Split Theme
+# Portfoli
 
-A calm, personal portfolio with a fixed sidebar and photo slot. Built with [Astro](https://astro.build), hosted on GitHub Pages.
+Built with [Astro](https://astro.build), hosted on GitHub Pages.
 
 ## 🚀 Run Locally
 
@@ -9,29 +9,13 @@ npm install
 npm run dev   # → http://localhost:4321
 ```
 
-## 📸 Adding Your Photo
-
-1. Add your photo file to the `/public/` folder — name it `photo.jpg` (or `.png`, `.webp`)
-2. Open `src/pages/index.astro`
-3. Find this section near the top:
-   ```html
-   <!-- TO ADD YOUR PHOTO -->
-   🧑‍💻
-   ```
-4. Replace the emoji with:
-   ```html
-   <img src="/photo.jpg" alt="Jessica Kuo" />
-   ```
-
-**Tip:** A square photo works best (e.g. 400×400px). The sidebar will crop it into a circle automatically.
-
 ## ✏️ Personalising Your Content
 
 All content lives in `src/pages/index.astro`. Search for these placeholders:
 
 | Placeholder | Replace with |
 |---|---|
-| `Jessica Kuo` | Your real name |
+| `name` | Your real name |
 | `your@email.com` | Your email address |
 | `yourusername` | Your GitHub & LinkedIn handles |
 
