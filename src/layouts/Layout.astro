@@ -1,4 +1,9 @@
 ---
+import '@fontsource-variable/lora';
+import '@fontsource-variable/lora/wght-italic.css';
+import '@fontsource-variable/dm-sans';
+import '@fontsource-variable/martian-mono';
+
 interface Props { title: string; }
 const { title } = Astro.props;
 ---
@@ -8,13 +13,30 @@ const { title } = Astro.props;
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
-  <meta name="description" content="Data & Machine Learning Engineer — building scalable, reliable data and ML systems for healthcare and research." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&family=Martian+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <meta name="description" content="Data & Machine Learning Engineer. Building scalable, reliable data and ML systems for healthcare and research." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="canonical" href="https://kuo4230.github.io" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content="Data & Machine Learning Engineer. Building scalable, reliable data and ML systems for healthcare and research." />
+  <meta property="og:url" content="https://kuo4230.github.io" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content="Data & Machine Learning Engineer. Building scalable, reliable data and ML systems for healthcare and research." />
+  <script is:inline>
+    (function() {
+      const stored = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = stored || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
   <slot />
+  <script data-goatcounter="https://kuo4230.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
 
@@ -37,13 +59,53 @@ const { title } = Astro.props;
     --text-light:   #9aaa98;
     --accent:       #5a8e48;
     --accent-warm:  #8a6a3a;
-    --font-serif:   'Lora', Georgia, serif;
-    --font-sans:    'DM Sans', sans-serif;
-    --font-mono:    'Martian Mono', monospace;
+    --font-serif:   'Lora Variable', Georgia, serif;
+    --font-sans:    'DM Sans Variable', sans-serif;
+    --font-mono:    'Martian Mono Variable', monospace;
     --sidebar-w:    260px;
   }
 
+  [data-theme="dark"] {
+    --sage-light:   #2a3828;
+    --sage-mid:     #3a5234;
+    --sage:         #7a9e6a;
+    --sage-dark:    #8abf78;
+    --forest:       #c8e0c0;
+    --bg:           #141a14;
+    --bg-warm:      #1a201a;
+    --bg-sidebar:   #181e18;
+    --border:       #2a3828;
+    --border-mid:   #3a5234;
+    --text:         #d8e4d4;
+    --text-muted:   #9aaa98;
+    --text-light:   #6a7a68;
+    --accent:       #7ab868;
+    --accent-warm:  #c4a060;
+  }
+
   html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 2rem; }
+
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    padding: 0.75rem 1.5rem;
+    background: var(--forest);
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-decoration: none;
+    z-index: 200;
+  }
+  .skip-link:focus {
+    top: 0;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
 
   body {
     background: var(--bg);
@@ -160,6 +222,13 @@ const { title } = Astro.props;
     color: var(--forest);
   }
   .sidebar-nav-icon { font-size: 0.85rem; opacity: 0.7; }
+
+  .sidebar-theme {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+  }
 
   /* Sidebar links */
   .sidebar-links {
@@ -412,6 +481,21 @@ const { title } = Astro.props;
     flex-shrink: 0;
   }
 
+  .skill-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.1em 0.45em;
+    border-radius: 3px;
+    vertical-align: middle;
+  }
+  .skill-tag.learning {
+    color: var(--accent-warm);
+    border: 1px solid var(--accent-warm);
+    opacity: 0.7;
+  }
+
   /* ── Projects ── */
   .projects-list {
     display: flex;
@@ -570,6 +654,58 @@ const { title } = Astro.props;
     color: var(--text-light);
   }
 
+  /* ── Theme toggle ── */
+  .theme-toggle {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    transition: border-color 0.2s, color 0.2s;
+    flex-shrink: 0;
+  }
+  .theme-toggle:hover {
+    border-color: var(--sage-mid);
+    color: var(--forest);
+  }
+
+  /* ── Back to top ── */
+  .back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--forest);
+    color: #fff;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.3s, transform 0.3s, background 0.2s;
+    z-index: 80;
+  }
+  .back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .back-to-top:hover {
+    background: var(--accent);
+  }
+
   /* ── Animation ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
@@ -585,12 +721,22 @@ const { title } = Astro.props;
     .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .footer { padding: 1.25rem 2.5rem; }
   }
-  .mobile-profile {
+  /* ── Mobile header & hamburger ── */
+  .mobile-header {
+    display: none;
+  }
+  .mobile-overlay {
     display: none;
   }
 
   @media (max-width: 720px) {
-    .sidebar { display: none; }
+    .sidebar {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+    .sidebar.open {
+      transform: translateX(0);
+    }
     .main { margin-left: 0; }
     .skills-grid { grid-template-columns: 1fr; }
     .project-card { grid-template-columns: 1fr; }
@@ -599,41 +745,82 @@ const { title } = Astro.props;
     .hero { padding: 4rem 1.5rem; }
     .footer { padding: 1.25rem 1.5rem; flex-direction: column; gap: 0.4rem; text-align: center; }
 
-    .mobile-profile {
+    .mobile-header {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      padding: 2.5rem 1.5rem 0;
-      gap: 0.75rem;
-    }
-    .mobile-profile-photo {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid var(--bg);
-      box-shadow: 0 0 0 2px var(--sage-mid);
-      background: var(--sage-light);
-    }
-    .mobile-profile-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 50;
     }
     .mobile-profile-name {
       font-family: var(--font-serif);
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 500;
       color: var(--forest);
-      text-align: center;
     }
     .mobile-profile-role {
       font-family: var(--font-mono);
-      font-size: 0.6rem;
+      font-size: 0.55rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--sage);
-      text-align: center;
+    }
+
+    .mobile-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      padding: 6px;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 150;
+    }
+    .hamburger-line {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--forest);
+      border-radius: 1px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .hamburger.open .hamburger-line:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .hamburger.open .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.open .hamburger-line:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .mobile-overlay {
+      display: block;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.3);
+      z-index: 90;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .mobile-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
     }
   }
 </style>

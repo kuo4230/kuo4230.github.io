@@ -8,6 +8,9 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "@fontsource-variable/dm-sans": "^5.2.8",
+    "@fontsource-variable/lora": "^5.2.8",
+    "@fontsource-variable/martian-mono": "^5.2.7",
     "astro": "^5.18.0"
   }
 }

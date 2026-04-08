@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../assets/photo.jpg';
+---
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-photo-wrap">
+    <div class="sidebar-photo" id="sidebar-photo">
+      <Image src={photo} alt="Jessica Kuo" width={350} height={350} format="webp" />
+    </div>
+  </div>
+
+  <div class="sidebar-name">Jessica Kuo</div>
+  <div class="sidebar-role">Data & ML Engineer</div>
+
+  <div class="sidebar-divider"></div>
+
+  <nav aria-label="Main navigation">
+    <ul class="sidebar-nav">
+      <li><a href="#about" class="active">
+        <span class="sidebar-nav-icon" aria-hidden="true">🌿</span> About
+      </a></li>
+      <li><a href="#skills">
+        <span class="sidebar-nav-icon" aria-hidden="true">⚙️</span> Skills
+      </a></li>
+      <li><a href="#projects">
+        <span class="sidebar-nav-icon" aria-hidden="true">🔬</span> Projects
+      </a></li>
+      <li><a href="#contact">
+        <span class="sidebar-nav-icon" aria-hidden="true">✉️</span> Contact
+      </a></li>
+    </ul>
+  </nav>
+
+  <div class="sidebar-theme">
+    <button class="theme-toggle" aria-label="Toggle dark mode" data-theme-toggle>
+      <span class="theme-icon"></span>
+    </button>
+  </div>
+
+  <div class="sidebar-links">
+    <a href="https://github.com/kuo4230" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+      <span class="sidebar-link-icon" aria-hidden="true">⌥</span> github.com/kuo4230
+    </a>
+    <a href="https://www.linkedin.com/in/jessica-wanyi-kuo/" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+      <span class="sidebar-link-icon" aria-hidden="true">◈</span> linkedin.com/in/jessica-wanyi-kuo
+    </a>
+    <a href="mailto:kuo.wanyi.jessica@gmail.com" class="sidebar-link">
+      <span class="sidebar-link-icon">✉</span> kuo.wanyi.jessica@gmail.com
+    </a>
+  </div>
+</aside>

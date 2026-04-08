@@ -1,89 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import Hero from '../components/Hero.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Footer from '../components/Footer.astro';
+import { projects } from '../data/projects';
 ---
 
-<Layout title="Jessica Kuo — Data & ML Engineer">
+<Layout title="Jessica Kuo | Data & ML Engineer">
 
-  <!-- ── Sidebar ── -->
-  <aside class="sidebar">
+  <Sidebar />
 
-    <div class="sidebar-photo-wrap">
-      <div class="sidebar-photo" id="sidebar-photo">
-        <!--
-          TO ADD YOUR PHOTO:
-          1. Place your image file in /public/photo.jpg
-          2. Replace the emoji below with:
-             <img src="/photo.jpg" alt="Jessica Kuo" />
-        -->
-        <img src="/photo.jpg" alt="Jessica Kuo" />
+  <main class="main" id="main-content">
+
+    <!-- Mobile header -->
+    <div class="mobile-header">
+      <div class="mobile-header-info">
+        <div class="mobile-profile-name">Jessica Kuo</div>
+        <div class="mobile-profile-role">Data &amp; ML Engineer</div>
+      </div>
+      <div class="mobile-header-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode" data-theme-toggle>
+          <span class="theme-icon"></span>
+        </button>
+        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
       </div>
     </div>
+    <div class="mobile-overlay" aria-hidden="true"></div>
 
-    <div class="sidebar-name">Jessica Kuo</div>
-    <div class="sidebar-role">Data & ML Engineer</div>
-
-    <div class="sidebar-divider"></div>
-
-    <ul class="sidebar-nav">
-      <li><a href="#about" class="active">
-        <span class="sidebar-nav-icon">🌿</span> About
-      </a></li>
-      <li><a href="#skills">
-        <span class="sidebar-nav-icon">⚙️</span> Skills
-      </a></li>
-      <li><a href="#projects">
-        <span class="sidebar-nav-icon">🔬</span> Projects
-      </a></li>
-      <li><a href="#contact">
-        <span class="sidebar-nav-icon">✉️</span> Contact
-      </a></li>
-    </ul>
-
-    <div class="sidebar-links">
-      <a href="https://github.com/kuo4230" target="_blank" class="sidebar-link">
-        <span class="sidebar-link-icon">⌥</span> github.com/kuo4230
-      </a>
-      <a href="https://www.linkedin.com/in/jessica-wanyi-kuo/" target="_blank" class="sidebar-link">
-        <span class="sidebar-link-icon">◈</span> linkedin.com/in/jessica-wanyi-kuo
-      </a>
-      <a href="mailto:kuo.wanyi.jessica@gmail.com" class="sidebar-link">
-        <span class="sidebar-link-icon">✉</span> kuo.wanyi.jessica@gmail.com
-      </a>
-    </div>
-
-  </aside>
-
-  <!-- ── Main ── -->
-  <div class="main">
-
-    <!-- Mobile profile (hidden on desktop) -->
-    <div class="mobile-profile">
-      <div class="mobile-profile-photo">
-        <img src="/photo.jpg" alt="Jessica Kuo" />
-      </div>
-      <div class="mobile-profile-name">Jessica Kuo</div>
-      <div class="mobile-profile-role">Data &amp; ML Engineer</div>
-    </div>
-
-    <!-- Hero -->
-    <section class="hero" id="home">
-      <div class="hero-available">
-        <span class="hero-available-dot"></span>
-        Available for new roles
-      </div>
-      <h1>
-        Data &amp; <em>Machine<br/>Learning</em> Engineer
-      </h1>
-      <p class="hero-sub">
-        Building scalable, reliable data and ML systems — end-to-end,
-        from ingestion to production. Focused on healthcare IT and
-        research applications where correctness matters.
-      </p>
-      <div class="hero-cta">
-        <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="#contact" class="btn-ghost">Get in Touch</a>
-      </div>
-    </section>
+    <Hero />
 
     <!-- About -->
     <section class="section" id="about">
@@ -94,7 +43,7 @@ import Layout from '../layouts/Layout.astro';
           <p>
             I'm a Data &amp; Machine Learning Engineer with a focus on building
             systems that are correct, maintainable, and production-ready. My work
-            spans the full ML lifecycle — data ingestion and modeling, training
+            spans the full ML lifecycle, from data ingestion and modeling to training
             pipelines, deployment, and analytics.
           </p>
           <p>
@@ -105,7 +54,7 @@ import Layout from '../layouts/Layout.astro';
           </p>
           <p>
             I'm especially drawn to problems at the intersection of large-scale data
-            systems and healthcare IT — where correctness and reliability have
+            systems and healthcare IT, where correctness and reliability have
             real-world impact.
           </p>
         </div>
@@ -203,111 +152,10 @@ import Layout from '../layouts/Layout.astro';
       <div class="section-eyebrow">Projects</div>
       <h2 class="section-title">Selected <em>work.</em></h2>
       <div class="projects-list">
-
-        <article class="project-card">
-          <div>
-            <div class="project-type">Computer Vision · Animal Behaviour · Research</div>
-            <h3>Video Annotation &amp; Auto-Annotation for Animal Behaviour Studies</h3>
-            <p>
-              Built an end-to-end Python pipeline for AgriGates to automate calf behaviour
-              monitoring from video footage — replacing manual observation at scale. The system
-              detects individual calves, tracks their movements using BotSort, and classifies
-              behaviour (standing vs. lying) using a custom-trained ResNet-18 classifier.
-              The final state classification model achieved &gt;90% accuracy and F1 score in testing.
-            </p>
-            <div class="project-tags">
-              <span>Python</span><span>PyTorch</span><span>YOLOv8</span>
-              <span>ResNet-18</span><span>BoT-SORT</span>
-            </div>
-          </div>
-          <a href="https://lnkd.in/gMRVEPkD" target="_blank" class="project-arrow" style="text-decoration:none;">↗</a>
-        </article>
-
-        <article class="project-card">
-          <div>
-            <div class="project-type">Machine Learning · Healthcare · Classification</div>
-            <h3>Predicting Diabetes in Pima Indian Women Using Logistic Regression</h3>
-            <p>
-              Built a logistic regression classifier with hyperparameter optimization to predict
-              diabetes onset from clinical features including glucose levels, BMI, and pregnancies.
-              The model achieved 75% accuracy on the test set, outperforming the baseline by ~8%.
-              Glucose was the strongest predictor, followed by BMI and pregnancies. Analysis
-              highlighted the clinical importance of reducing false negatives to avoid delayed diagnoses.
-              View the full report <a href="https://ubc-mds.github.io/diabetes_predictor_py/reports/diabetes_analysis.html" target="_blank" style="color:var(--accent);">here</a>.
-            </p>
-            <div class="project-tags">
-              <span>Python</span><span>scikit-learn</span><span>pandas</span>
-              <span>numpy</span><span>Altair</span><span>Matplotlib</span>
-              <span>Quarto</span><span>pytest</span>
-            </div>
-          </div>
-          <a href="https://github.com/UBC-MDS/diabetes_predictor_py" target="_blank" class="project-arrow" style="text-decoration:none;">↗</a>
-        </article>
-
-        <article class="project-card">
-          <div>
-            <div class="project-type">Open Source · Software Engineering · Data Structures</div>
-            <h3>datastructpy — A Python Package</h3>
-            <p>
-              Co-developed and shipped an open-source Python library providing clean,
-              practical implementations of essential data structures — including Binary Search Trees —
-              designed for interview prep, coding challenges, and education. Taken from concept
-              to a fully published PyPI package in under a month, with automated testing,
-              comprehensive documentation, and a robust CI/CD pipeline.
-            </p>
-            <div class="project-tags">
-              <span>Python</span><span>Poetry</span><span>pytest</span>
-              <span>PyPI</span><span>Tox</span><span>GitHub Actions</span>
-              <span>Codecov</span><span>Sphinx</span>
-            </div>
-          </div>
-          <a href="https://github.com/UBC-MDS/datastructpy" target="_blank" class="project-arrow" style="text-decoration:none;">↗</a>
-        </article>
-
-        <article class="project-card">
-          <div>
-            <div class="project-type">Mental Health · Topic Mining · NLP · Research · Unsupervised ML</div>
-            <h3>Mental Health App Review Topic Mining</h3>
-            <p>
-              Explored NLP and unsupervised machine learning to automate analysis of mental health app user
-              reviews at scale. Scraped 63,474 reviews across 157 apps from the Google Play Store, then applied
-              TF-IDF vectorization and k-means clustering to surface high-level topics from user opinions.
-              Compared ten models with varying pre-processing rules; the best model identified 6 distinct topics
-              from all reviews, 6 from negative reviews, and 9 from positive reviews. Results suggest the approach
-              is a promising complement to traditional qualitative analysis for rapid, large-scale review mining.
-            </p>
-            <div class="project-tags">
-              <span>Python</span><span>NLP</span><span>scikit-learn</span>
-              <span>TF-IDF</span><span>K-Means Clustering</span><span>Text Mining</span>
-              <span>Web Scraping</span><span>Unsupervised ML</span>
-            </div>
-          </div>
-          <a href="https://github.com/kuo4230/HI_Dissertation" target="_blank" class="project-arrow" style="text-decoration:none;">↗</a>
-        </article>
-
-        <article class="project-card">
-          <div>
-            <div class="project-type">Data Visualisation · Dashboard · Interactive</div>
-            <h3>World Happiness Dashboard</h3>
-            <p>
-              Co-authored an interactive dashboard visualising the World Happiness Dataset (2020–2024),
-              helping users explore economic and political factors that influence happiness across countries
-              and continents. Users can filter by GDP, perception of corruption, and other criteria to
-              compare nations — with a practical focus on identifying potential immigration destinations
-              based on personal priorities.
-            </p>
-            <div class="project-tags">
-              <span>Python</span><span>Dash</span><span>Altair</span>
-              <span>pandas</span><span>GeoPandas</span><span>scikit-learn</span>
-              <span>Matplotlib</span><span>Render</span>
-            </div>
-          </div>
-          <a href="https://github.com/UBC-MDS/DSCI-532_2025_11_world_happiness" target="_blank" class="project-arrow" style="text-decoration:none;">↗</a>
-        </article>
-
+        {projects.map(project => <ProjectCard project={project} />)}
       </div>
       <p style="margin-top:1.5rem; font-family:var(--font-mono); font-size:0.65rem; color:var(--text-light); letter-spacing:0.05em;">
-        ✦ More projects coming soon — some work is under NDA.
+        ✦ More projects coming soon. Some work is under NDA.
       </p>
     </section>
 
@@ -318,13 +166,13 @@ import Layout from '../layouts/Layout.astro';
         <div class="contact-text">
           <h2 class="section-title">Let's build<br/><em>something great.</em></h2>
           <p>
-            I'm open to roles centred on large-scale data systems and production ML —
+            I'm open to roles centred on large-scale data systems and production ML,
             particularly in healthcare IT and research where the work has meaningful
             real-world impact.
           </p>
           <p>
             Whether you have a role, a project, or just want to chat about data
-            systems — I'd love to hear from you.
+            systems, I'd love to hear from you.
           </p>
         </div>
         <div class="contact-links-stack">
@@ -335,14 +183,14 @@ import Layout from '../layouts/Layout.astro';
               <div class="contact-link-value">kuo.wanyi.jessica@gmail.com</div>
             </div>
           </a>
-          <a href="https://github.com/kuo4230" target="_blank" class="contact-link-card">
+          <a href="https://github.com/kuo4230" target="_blank" rel="noopener noreferrer" class="contact-link-card">
             <div class="contact-link-icon">⌥</div>
             <div>
               <div class="contact-link-label">GitHub</div>
               <div class="contact-link-value">github.com/kuo4230</div>
             </div>
           </a>
-          <a href="https://www.linkedin.com/in/jessica-wanyi-kuo/" target="_blank" class="contact-link-card">
+          <a href="https://www.linkedin.com/in/jessica-wanyi-kuo/" target="_blank" rel="noopener noreferrer" class="contact-link-card">
             <div class="contact-link-icon">◈</div>
             <div>
               <div class="contact-link-label">LinkedIn</div>
@@ -353,13 +201,11 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <span>Built with Astro · Hosted on GitHub Pages</span>
-      <span>🌿 Jessica Kuo © 2026</span>
-    </footer>
+    <Footer />
 
-  </div><!-- /main -->
+  </main>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
 
 </Layout>
 
@@ -379,4 +225,61 @@ import Layout from '../layouts/Layout.astro';
   }, { threshold: 0.4 });
 
   sections.forEach(s => observer.observe(s));
+
+  // Mobile hamburger menu
+  const hamburger = document.querySelector('.hamburger');
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.querySelector('.mobile-overlay');
+
+  function toggleMenu() {
+    const isOpen = sidebar?.classList.toggle('open');
+    overlay?.classList.toggle('open', isOpen);
+    hamburger?.classList.toggle('open', isOpen);
+    hamburger?.setAttribute('aria-expanded', String(isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+
+  hamburger?.addEventListener('click', toggleMenu);
+  overlay?.addEventListener('click', toggleMenu);
+
+  // Close menu when clicking a nav link
+  document.querySelectorAll('.sidebar-nav a, .sidebar-link').forEach(link => {
+    link.addEventListener('click', () => {
+      if (sidebar?.classList.contains('open')) toggleMenu();
+    });
+  });
+
+  // Dark mode toggle
+  function updateThemeIcons(theme: string) {
+    document.querySelectorAll('.theme-icon').forEach(icon => {
+      (icon as HTMLElement).textContent = theme === 'dark' ? '☀' : '☾';
+    });
+  }
+
+  updateThemeIcons(document.documentElement.getAttribute('data-theme') || 'light');
+
+  document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateThemeIcons(next);
+    });
+  });
+
+  // Back to top button
+  const backToTop = document.querySelector('.back-to-top');
+  const hero = document.querySelector('.hero');
+
+  if (backToTop && hero) {
+    const topObserver = new IntersectionObserver(([entry]) => {
+      backToTop.classList.toggle('visible', !entry.isIntersecting);
+    }, { threshold: 0 });
+    topObserver.observe(hero);
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 </script>
